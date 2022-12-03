@@ -1,0 +1,20 @@
+<html>
+
+    <head></head>
+    <body>
+        
+    <table>
+        
+        {% for p in all_players %}
+        <tr>
+        <td>{{p.pID}}</td>
+        <td>{{p.fName}}</td> 
+        <td>{{p.lName}}</td>
+        <td>{{p.height}}</td>
+        <td>{{p.weight}}</td>
+        <td>{{p.num}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    </body>
+</html>
