@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'mainapp.apps.MainappConfig',
     'leaguestat.apps.LeaguestatConfig',
     'team.apps.TeamConfig',
     'player.apps.PlayerConfig',
@@ -124,3 +125,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DEFAULT_FROM_EMAIL = "in00199@surrey.ac.uk"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
