@@ -1,0 +1,18 @@
+<html>
+
+    <head></head>
+    <body>
+        
+    <table>
+        
+        {% for t in teams %}
+        <tr>
+        <td>{{t.teamID}}</td>
+        <td>{{t.teamName}}</td> 
+        <td>{{t.managerName}}</td>
+        <td>{{t.teamSponsor}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    </body>
+</html>
