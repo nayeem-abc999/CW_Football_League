@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'leaguestat.apps.LeaguestatConfig',
     'team.apps.TeamConfig',
     'player.apps.PlayerConfig',
     'django.contrib.admin',

@@ -1,0 +1,17 @@
+<html>
+
+    <head></head>
+    <body>
+        
+    <table>
+        
+        {% for mh in match_history %}
+        <tr>
+        <td>{{mh.matchID}}</td> 
+         <td>{{mh.teamA}} :{{mh.goalA}}</td> 
+         <td>{{mh.teamB}} :{{mh.goalB}}</td> 
+        </tr>
+        {% endfor %}
+    </table>
+    </body>
+</html>

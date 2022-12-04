@@ -1,0 +1,23 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        {% for d in table %}
+        <tr>
+        <td>{{d.teamName.teamName}}</td>
+        <td>{{d.totalMatch}}</td>
+        <td>{{d.won}}</td>
+        <td>{{d.lost}}</td>
+        <td>{{d.drawn}}</td>
+        <td>{{d.gf}}</td>
+        <td>{{d.ga}}</td>
+        <td>{{d.gd}}</td>
+        <td>{{d.points}}</td>
+        <br>
+        
+        
+        </tr>
+        {% endfor %}
+    </body>
+</html>

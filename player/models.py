@@ -8,6 +8,6 @@ class Player(models.Model):
     height = models.DecimalField(max_digits=5, decimal_places=2,validators=[MinValueValidator(120)])
     weight = models.DecimalField(max_digits=5, decimal_places=2,validators=[MinValueValidator(50)])
     num = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(100)])
-    
+    position = models.CharField(max_length=20, default="Unsigned")
     def __str__(self):
         return self.fName
