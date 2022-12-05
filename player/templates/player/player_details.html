@@ -5,18 +5,15 @@
     {% endblock title}
    
 {% block content %}
-{% include 'team/team_navbar.html' %}
-   
+   {% include 'player/player_navbar.html' %}
   <table>
-        <p>Hello there</p>
         
         {% for p in data %}
         <tr>
-        <td>{{p.player.num}}</td>
-         <td>{{p.player.fName}} {{p.player.lName}}</td>
-        <td>{{p.teamID.name}}</td>
+        <td>{{p.pID}}</td>
+        <td>{{p.fName}} {{p.lName}}</td>
+        <td>{{p.position}}</td>
         </tr>
         {% endfor %}
     </table>
 {% endblock content %}
-

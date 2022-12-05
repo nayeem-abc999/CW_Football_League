@@ -5,10 +5,10 @@
     {% endblock title}
    
 {% block content %}
-
+    {% include 'leaguestat/leaguestat_navbar.html' %}
     <table>
         
-        {% for mh in match_history %}
+        {% for mh in season_history %}
         <tr>
             <td>{{mh.matchID}}</td> 
             <td>{{mh.teamA}} :{{mh.goalA}}</td> 

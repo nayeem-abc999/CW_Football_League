@@ -6,30 +6,33 @@
     {% block title %}
     <title>Base</title>
     {% endblock title %}
+    <style>
+        li {display: inline;}
+    </style>
   </head>
   <body>
 
-      {% block header %}
+    {% block header %}
       <header>header testing</header>
-      {% endblock header %}
+    {% endblock header %}
 
-      {% block navbar %}
-    <ul>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'show_players' %}">Players</a></li>
-        <li><a href="{% url 'show_teams' %}">Teams</a></li>
-        <li><a href="{% url 'league_table' %}">League Table</a></li>
-        <li><a href="{% url 'contact' %}">Contact us</a></li>
-        <li><a href="">About</a></li>
+    {% block navbar %}
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'show_players' %}">Players</a></li>
+            <li><a href="{% url 'show_teams' %}">Teams</a></li>
+            <li><a href="{% url 'league_table' %}">League Table</a></li>
+            <li><a href="{% url 'contact' %}">Contact us</a></li>
+            <li><a href="">About</a></li>
     </ul>
-      {% endblock navbar %}
+    {% endblock navbar %}
 
-      {% block content %}
-      <p>this is base</p>
-      {% endblock content %}
+    {% block content %}
+        <p>this is base</p>
+    {% endblock content %}
 
-      {% block footer %}
-      <footer>footer testing</footer>
-      {% endblock footer %}
+    {% block footer %}
+        <footer>footer testing</footer>
+    {% endblock footer %}
   </body>
 </html>

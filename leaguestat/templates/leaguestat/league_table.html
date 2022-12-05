@@ -5,6 +5,7 @@
     {% endblock title}
    
 {% block content %}
+    {% include 'leaguestat/leaguestat_navbar.html' %}
       {% for d in table %}
         <tr>
         <td>{{d.teamName.teamName}}</td>

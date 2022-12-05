@@ -15,3 +15,5 @@ class PlayerForm(forms.ModelForm):
             "weight",
             "num"
         ]
+class SearchDetailsForm(forms.Form):
+    pID = forms.IntegerField()

@@ -11,4 +11,5 @@ class TeamMemberForm(forms.ModelForm):
             "teamID",
             "player"
         ]
-        
+class SearchTeamForm(forms.Form):
+    teamID = forms.IntegerField()

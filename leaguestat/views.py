@@ -55,5 +55,5 @@ def match_result(request):
 
 def match_history(request):
     context = {}
-    context["match_history"] = Fixtures.objects.all().order_by('-matchID')
-    return render(request, "leaguestat/match_history.html",context)
+    context["season_history"] = Fixtures.objects.all().order_by('-matchID')
+    return render(request, "leaguestat/season_history.html",context)
