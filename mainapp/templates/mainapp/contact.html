@@ -1,10 +1,25 @@
-<body>
-<form method="post">
-{% csrf_token %}
-{{ form.as_p }}
-<div class="form-actions">
-<button type="submit">Send</button>
-</div>
-</form>
+{% extends "base.html" %}
+    
+    {% block title}
+        <title>Contact Us</title>
+    {% endblock title}
+   
+{% block content %}
+   <h1>Welcome to the Contact page</h1>
+
+   <div>
+    <p>
+        Call us on: +44 (0)0011223344
+    </p>
+    <p>
+    Staghill Campus, University of Surrey <br>
+    Guildford, Surrey <br>
+    GU2 7HX <br>
+    </p>
   
-</body>
+    <h2>Email us: <a href="{% url 'contact_mail' %}">Form</a></h2>
+ 
+   </div>
+
+{% endblock content %}
+

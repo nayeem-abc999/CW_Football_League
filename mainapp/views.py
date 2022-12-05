@@ -6,7 +6,15 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from .forms import ContactForm
 
+def home(request):
+    context = {}
+    return render(request, "mainapp/home.html",context)
+
 def contact(request):
+    context = {}
+    return render(request, "mainapp/contact.html",context)
+
+def contact_mail(request):
     if request.method == "GET":
         form = ContactForm()
     else:
@@ -21,4 +29,4 @@ def contact(request):
             except BadHeaderError:
                 return HttpResponse("Invalid header found.")
             return redirect(reverse('contact'))
-    return render(request, 'mainapp/contact.html', {"form": form})
+    return render(request, 'mainapp/contact_mail.html', {"form": form})

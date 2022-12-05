@@ -1,10 +1,11 @@
-<html>
+{% extends "base.html" %}
+    
+    {% block title %}  
+        <title>All Teams</title>
+    {% endblock title %}  
 
-    <head></head>
-    <body>
-        
+{% block content %}  
     <table>
-        
         {% for t in teams %}
         <tr>
         <td>{{t.teamID}}</td>
@@ -14,5 +15,5 @@
         </tr>
         {% endfor %}
     </table>
-    </body>
-</html>
+    
+{% endblock content %}  

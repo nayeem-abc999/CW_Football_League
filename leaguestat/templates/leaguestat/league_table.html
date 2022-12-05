@@ -1,9 +1,11 @@
-<html>
-    <head>
-
-    </head>
-    <body>
-        {% for d in table %}
+{% extends "base.html" %}
+    
+    {% block title}
+        <title>Welcome</title>
+    {% endblock title}
+   
+{% block content %}
+      {% for d in table %}
         <tr>
         <td>{{d.teamName.teamName}}</td>
         <td>{{d.totalMatch}}</td>
@@ -19,5 +21,4 @@
         
         </tr>
         {% endfor %}
-    </body>
-</html>
+{% endblock content %}

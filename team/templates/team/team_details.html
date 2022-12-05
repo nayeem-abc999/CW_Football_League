@@ -1,8 +1,11 @@
-<html>
-  <head>
-
-  </head>
-  <body>
+{% extends "base.html" %}
+    
+    {% block title}
+        <title>Welcome</title>
+    {% endblock title}
+   
+{% block content %}
+   
   <table>
         <p>Hello there</p>
         
@@ -14,5 +17,5 @@
         </tr>
         {% endfor %}
     </table>
-</body>
-</html>
+{% endblock content %}
+
