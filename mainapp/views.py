@@ -4,7 +4,12 @@ from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from .forms import ContactForm
+from .forms import ContactForm, UploadFileForm
+
+
+from django.http import HttpResponse  
+from mainapp.functions.functions import handle_uploaded_file  
+
 
 def home(request):
     context = {}
@@ -30,3 +35,18 @@ def contact_mail(request):
                 return HttpResponse("Invalid header found.")
             return redirect(reverse('contact'))
     return render(request, 'mainapp/contact_mail.html', {"form": form})
+
+def social(request):
+    context = {}
+    return render(request, "mainapp/social.html",context)
+
+
+def file_upload(request):
+    if request.method == 'POST':  
+        uf = UploadFileForm(request.POST, request.FILES)  
+        if uf.is_valid():  
+            handle_uploaded_file(request.FILES['file'])  
+            return HttpResponse("File uploaded successfuly")  
+    else:  
+        uf= UploadFileForm()  
+        return render(request, "mainapp/upload_file.html", {'form': uf})   

@@ -1,13 +1,26 @@
 {% extends "base.html" %}
     
-    {% block title}
-        <title>Welcome</title>
-    {% endblock title}
+    {% block title %}
+        <title>League Table</title>
+    {% endblock title%}
    
 {% block content %}
+
     {% include 'leaguestat/leaguestat_navbar.html' %}
-      {% for d in table %}
-        <tr>
+    <table class="table table-bordered table-dark"> 
+    <tr>
+        <th>Team Name</th>
+        <th>Total Match</th>
+        <th>Won</th>
+        <th>Lost</th>
+        <th>Drawn</th>
+        <th>GF</th>
+        <th>GA</th>
+        <th>GD</th>
+        <th>Points</th>
+    </tr>
+    {% for d in table %}
+    <tr>
         <td>{{d.teamName.teamName}}</td>
         <td>{{d.totalMatch}}</td>
         <td>{{d.won}}</td>
@@ -17,9 +30,10 @@
         <td>{{d.ga}}</td>
         <td>{{d.gd}}</td>
         <td>{{d.points}}</td>
-        <br>
-        
-        
         </tr>
         {% endfor %}
+    </table>
+        
+        
+        
 {% endblock content %}

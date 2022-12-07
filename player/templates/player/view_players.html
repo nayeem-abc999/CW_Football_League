@@ -6,14 +6,19 @@
    
 {% block content %}
 {% include 'player/player_navbar.html' %}
-   <table>
+
+    <table class="table table-bordered table-dark"> 
+        <tr>
+            <th>Player ID</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Jersey Number</th>
+        </tr>
         {% for p in all_players %}
         <tr>
         <td>{{p.pID}}</td>
-        <td>{{p.fName}}</td> 
-        <td>{{p.lName}}</td>
-        <td>{{p.height}}</td>
-        <td>{{p.weight}}</td>
+        <td>{{p.fName}} {{p.lName}}</td>
+        <td>{{p.position}}</td>
         <td>{{p.num}}</td>
         </tr>
         {% endfor %}

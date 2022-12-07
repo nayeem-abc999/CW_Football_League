@@ -6,13 +6,14 @@
    
 {% block content %}
     {% include 'leaguestat/leaguestat_navbar.html' %}
-    <table>
+    <table class="table table-bordered table-dark">
         
         {% for mh in season_history %}
         <tr>
             <td>{{mh.matchID}}</td> 
-            <td>{{mh.teamA}} :{{mh.goalA}}</td> 
-            <td>{{mh.teamB}} :{{mh.goalB}}</td> 
+            <td>{{mh.teamA}}</td> 
+            <td>{{mh.goalA}}-{{mh.goalB}}</td>
+            <td>{{mh.teamB}} </td> 
         </tr>
         {% endfor %}
     </table>

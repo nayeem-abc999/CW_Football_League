@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+    
+    {% block title}
+        <title>Social</title>
+    {% endblock title}
+   
+{% block content %}
+    <h1>Welcome to the football league Fan connect page</h1>
+
+    <p>Find Us: </p>
+    <p>Facebook: facebook@footballleague</p>
+    <p>Twitter: twitter@footballleague</p>
+    <p>Instagram: instagram@footballleague</p>
+
+    <p>Upload your photos to be a part of our magazine:</p><a href="{% url 'file_upload' %}"> <h2><b> @FootballSocial</b></h2> </a></li>
+
+
+{% endblock content %}
