@@ -31,8 +31,8 @@ def search_player(request):
     context ={}
     form = SearchDetailsForm(request.POST or None)
     if form.is_valid():
-        pID = form.cleaned_data["pID"]
-        return redirect(player_details, pID = pID)
+        ID = form.cleaned_data["ID"]
+        return redirect(player_details, pID = ID)
     context['form']= form
     return render(request, "player/search_player.html",context)
     

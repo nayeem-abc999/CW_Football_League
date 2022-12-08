@@ -1,5 +1,6 @@
 from django import forms
 from .models import Player
+from django.core.validators import MaxValueValidator, MinValueValidator 
 # creating a form
 class PlayerForm(forms.ModelForm):
 # create meta class
@@ -20,4 +21,4 @@ class PlayerForm(forms.ModelForm):
             "num"
         ]
 class SearchDetailsForm(forms.Form):
-    pID = forms.IntegerField()
+    ID = forms.IntegerField(validators=[MinValueValidator(1000)])

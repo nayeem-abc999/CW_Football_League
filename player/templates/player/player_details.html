@@ -1,8 +1,8 @@
 {% extends "base.html" %}
     
-    {% block title}
-        <title>Welcome</title>
-    {% endblock title}
+    {% block title %}
+        <title>Player Details</title>
+    {% endblock title %}
    
 {% block content %}
    {% include 'player/player_navbar.html' %}
@@ -11,7 +11,7 @@
        <p>Player ID: {{p.pID}}</p>
        <p>Player Name: {{p.fName}} {{p.lName}}</p>
        <p>Weight: {{p.weight}} (KG)</p>
-       <p>Height: {{h.height}} (cm)</p>
+       <p>Height: {{p.height}} (cm)</p>
        <p>Position: {{p.position}}</p>
        <p>Jersey Number: {{p.num}}</p>
         {% endfor %}</p>
