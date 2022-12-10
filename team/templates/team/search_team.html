@@ -6,7 +6,9 @@
     {% endblock title %}  
 
 {% block content %}  
+
 {% include 'team/team_navbar.html' %}
+<h3>Select your team ID</h3>
     <form method="POST" enctype="multipart/form-data">
 <!-- Security token -->
 {% csrf_token %}

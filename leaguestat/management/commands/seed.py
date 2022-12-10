@@ -24,9 +24,5 @@ class Command(BaseCommand):
 
 
         Fixtures.objects.all().delete()
-        f1 = Fixtures(matchID =1, teamA = t1, teamB =t2, goalA= 2, goalB = 3)
-        f1.save()
-        f2 = Fixtures(matchID =2, teamA = t3, teamB =t4, goalA= 2, goalB = 0)
-        f2.save()
         
         self.stdout.write('done3') 

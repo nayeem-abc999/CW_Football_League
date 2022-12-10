@@ -8,7 +8,6 @@ class MatchUpdateForm(forms.ModelForm):
         model = Fixtures
 # specify fields to be used
         fields = [
-           "matchID",
            "teamA",
            "teamB",
            "goalA",

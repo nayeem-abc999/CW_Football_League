@@ -319,5 +319,5 @@ class Command(BaseCommand):
         lt5.save()
         lt6 = LeagueTable(teamName = t6)
         lt6.save()
-
+        Fixtures.objects.all().delete()
         self.stdout.write('done LeagueTable') 

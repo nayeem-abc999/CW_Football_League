@@ -7,12 +7,7 @@
 {% block content %}
     {% include 'leaguestat/leaguestat_navbar.html' %}
     <table class="table table-bordered table-dark">
-        <tr>
-            <th>Match Number</th>
-            <th>Team</th>
-            <th>Score</th>
-            <th>Team</th>
-        </tr>
+        
         {% for mh in season_history %}
         <tr>
             <td>{{mh.matchID}}</td> 

@@ -13,7 +13,7 @@ class LeagueTable(models.Model):
     points = models.PositiveIntegerField(default=0)
 
 class Fixtures(models.Model):
-    matchID = models.PositiveIntegerField(unique=True)
+    matchID = models.AutoField(primary_key= True, auto_created= True)
     teamA = models.ForeignKey(Team, on_delete=models.CASCADE ,related_name = "A")
     teamB = models.ForeignKey(Team, on_delete=models.CASCADE,related_name = "B")
     goalA = models.PositiveIntegerField(default=0)
