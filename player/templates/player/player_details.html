@@ -6,14 +6,14 @@
    
 {% block content %}
    {% include 'player/player_navbar.html' %}
-        
+    <h4>Player Details:</h4>
     {% for p in data %}
-       <p>Player ID: {{p.pID}}</p>
-       <p>Player Name: {{p.fName}} {{p.lName}}</p>
-       <p>Weight: {{p.weight}} (KG)</p>
-       <p>Height: {{p.height}} (cm)</p>
-       <p>Position: {{p.position}}</p>
-       <p>Jersey Number: {{p.num}}</p>
+       <p> <b>Player ID: {{p.pID}}</b></p>
+       <p><b>Player Name: {{p.fName}} {{p.lName}}</b></p>
+       <p><b>Weight: {{p.weight}} (KG)</b></p>
+       <p><b>Height: {{p.height}} (cm)</b></p>
+       <p><b>Position: {{p.position}}</b></p>
+       <p><b>Jersey Number: {{p.num}}</b></p>
         {% endfor %}</p>
 
 {% endblock content %}

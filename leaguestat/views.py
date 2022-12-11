@@ -48,12 +48,12 @@ def match_result(request):
 
         tA.save()
         tB.save()
-        return redirect(match_history)
+        return redirect(season_history)
 
     context['form']= form
     return render(request, "leaguestat/match_result.html",context)
 
-def match_history(request):
+def season_history(request):
     context = {}
     context["season_history"] = Fixtures.objects.all().order_by('-matchID')
     return render(request, "leaguestat/season_history.html",context)

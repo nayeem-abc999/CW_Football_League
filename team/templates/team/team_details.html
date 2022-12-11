@@ -1,21 +1,27 @@
+
 {% extends "base.html" %}
     
-    {% block title}
+    {% block title %}
         <title>Team Details</title>
-    {% endblock title}
+    {% endblock title %}
    
 {% block content %}
 {% include 'team/team_navbar.html' %}
    
-  <table>
-
-        {% for p in data %}
+    <h3>All players in the team</h3>
+  <table class="table table-bordered table-dark">
+    <tr>
+        <td>Jersey</td>
+        <td>Name</td>
+        <td>Position</td>
+    </tr>
+    {% for p in data %}
         <tr>
         <td>{{p.player.num}}</td>
          <td>{{p.player.fName}} {{p.player.lName}}</td>
-        <td>{{p.teamID.name}}</td>
+        <td>{{p.player.position}}</td>
         </tr>
-        {% endfor %}
+    {% endfor %}
     </table>
 {% endblock content %}
 

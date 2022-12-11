@@ -6,7 +6,14 @@
 
 {% block content %}  
 {% include 'team/team_navbar.html' %}
+<h3>Current teams in the league</h3>
     <table class="table table-bordered table-dark">
+        <tr>
+            <td>Team ID</td>
+            <td>Team Name</td>
+            <td>Manager</td>
+            <td>Sponsor</td>
+        </tr>
         {% for t in teams %}
         <tr>
         <td>{{t.teamID}}</td>

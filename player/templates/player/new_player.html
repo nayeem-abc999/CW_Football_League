@@ -7,7 +7,8 @@
    
 {% block content %}
 {% include 'player/player_navbar.html' %}
-  <form method="POST" enctype="multipart/form-data">
+<h4>Enter details for new player registration</h4>
+<form method="POST" enctype="multipart/form-data">
 <!-- Security token -->
 {% csrf_token %}
 <!-- Using the formset -->

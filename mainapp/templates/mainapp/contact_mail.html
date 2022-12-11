@@ -6,6 +6,8 @@
     {% endblock title %}
    
 {% block content %}
+    <h4>Please enter your details and message:</h4>
+    <hr>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}

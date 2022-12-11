@@ -33,7 +33,7 @@ class TeamTests(TestCase):
 
         self.assertEqual(total_teams + 1, 6)
 
-    def test_invalid_attributes(self):
+    def test_invalid_duplicate_teamID(self):
         total_teams = Team.objects.all().count()
         t = Team(teamID = 5, teamName = "XYZ", managerName = "ABC", teamSponsor = "IDK")
         
@@ -43,7 +43,9 @@ class TeamTests(TestCase):
         except IntegrityError:
             pass
         self.assertNotEqual(total_teams + 1, Team.objects.all().count())
-
+    
+    def test_invalid_duplicate_teamName(self):
+        total_teams = Team.objects.all().count()
         t = Team(teamID = 6, teamName = "Team Mechanical", managerName = "ABC", teamSponsor = "IDK")
         
         try:

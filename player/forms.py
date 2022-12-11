@@ -9,7 +9,7 @@ class PlayerForm(forms.ModelForm):
         model = Player
 # specify fields to be used
         labels = {"pID": "Player ID", "fName" : "First Name",
-            "lName" : "Sure Name", "height" : "Height (cm)", "weight" : "Weight (KG)",
+            "lName" : "Surname", "height" : "Height (cm)", "weight" : "Weight (KG)",
             "position": "Position","num": "Jersey Number"}
         fields = [
             "pID",
@@ -20,5 +20,6 @@ class PlayerForm(forms.ModelForm):
             "position",
             "num"
         ]
+        
 class SearchDetailsForm(forms.Form):
     ID = forms.IntegerField(validators=[MinValueValidator(1000)])

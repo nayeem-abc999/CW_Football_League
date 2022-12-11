@@ -7,6 +7,8 @@
    
 {% block content %}
   {% include 'leaguestat/leaguestat_navbar.html' %}
+  <h3>Enter the Teams and Goal scored by them</h3>
+  <hr>
   <form method="POST" enctype="multipart/form-data">
 <!-- Security token -->
 {% csrf_token %}

@@ -5,6 +5,8 @@
     {% endblock title %}
    
 {% block content %}
+    <h3>Write your details and upload the file here</h3>
+    <hr>
 <form method="POST" class="post-form" enctype="multipart/form-data">  
         {% csrf_token %}  
         {{ form.as_p }}  

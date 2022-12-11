@@ -2,7 +2,7 @@ from django.db import models
 from team.models import Team
 
 class LeagueTable(models.Model):
-    teamName = models.ForeignKey(Team, on_delete=models.CASCADE)
+    teamName = models.OneToOneField(Team, unique=True, on_delete=models.CASCADE)
     totalMatch = models.PositiveIntegerField(default=0)
     won = models.PositiveIntegerField(default=0)
     lost =models.PositiveIntegerField(default=0)
