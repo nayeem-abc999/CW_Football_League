@@ -25,7 +25,8 @@ class TeamTests(TestCase):
         p2.save()
         p3 = Player(pID = 1002, fName = "Harry" , lName = "Walker", height = 176, weight = 68, num = 11, position = "Forward")
         p3.save()
-       
+    
+    # testing team's data saving
     def test_team(self):
         total_teams = Team.objects.count()
         t6 = Team(teamID = 6, teamName = "FC Mathematics", managerName = "Arthur Parker", teamSponsor="Qatar Airways" )
@@ -33,6 +34,7 @@ class TeamTests(TestCase):
 
         self.assertEqual(total_teams + 1, 6)
 
+    #testing duplicate ID
     def test_invalid_duplicate_teamID(self):
         total_teams = Team.objects.all().count()
         t = Team(teamID = 5, teamName = "XYZ", managerName = "ABC", teamSponsor = "IDK")
@@ -44,6 +46,7 @@ class TeamTests(TestCase):
             pass
         self.assertNotEqual(total_teams + 1, Team.objects.all().count())
     
+    #testing duplicate name
     def test_invalid_duplicate_teamName(self):
         total_teams = Team.objects.all().count()
         t = Team(teamID = 6, teamName = "Team Mechanical", managerName = "ABC", teamSponsor = "IDK")
@@ -55,6 +58,7 @@ class TeamTests(TestCase):
             pass
         self.assertNotEqual(total_teams + 1, Team.objects.all().count())
 
+    #testing team's player signing
     def test_TeamPlayers(self):
        
         t1 = Team.objects.get(teamID = 1)

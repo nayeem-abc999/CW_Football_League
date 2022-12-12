@@ -3,14 +3,14 @@ from .models import Player
 from django.core.validators import MaxValueValidator, MinValueValidator 
 # creating a form
 class PlayerForm(forms.ModelForm):
-# create meta class
     class Meta:
-# specify model to be used
+# Player model to be used
         model = Player
-# specify fields to be used
+# labels to be used for the fields
         labels = {"pID": "Player ID", "fName" : "First Name",
             "lName" : "Surname", "height" : "Height (cm)", "weight" : "Weight (KG)",
             "position": "Position","num": "Jersey Number"}
+# fields to be used
         fields = [
             "pID",
             "fName",
@@ -20,6 +20,7 @@ class PlayerForm(forms.ModelForm):
             "position",
             "num"
         ]
-        
+
+# player searching using Player's ID form
 class SearchDetailsForm(forms.Form):
     ID = forms.IntegerField(validators=[MinValueValidator(1000)])

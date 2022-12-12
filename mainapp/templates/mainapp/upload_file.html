@@ -7,6 +7,16 @@
 {% block content %}
     <h3>Write your details and upload the file here</h3>
     <hr>
+ {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+{{ message }}
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+
 <form method="POST" class="post-form" enctype="multipart/form-data">  
         {% csrf_token %}  
         {{ form.as_p }}  

@@ -18,17 +18,19 @@ class PlayerTests(TestCase):
         p4.save()
         p5 = Player(pID = 1004, fName = "Robert" , lName = "Smith", height = 177, weight = 60.5, num = 8, position = "Defender")
         p5.save()
-    
+    #testing all players details page
     def test_show_players(self):
         response = self.client.get(reverse("show_players"))
         self.assertEqual(response.status_code,200)
         self.assertTemplateUsed(response, "player/view_players.html")
-
+    
+    #testing individual player details page
     def test_player_details(self):
         response = self.client.post(reverse("player_details",args=[1003]))
         self.assertEqual(response.status_code,200)
         self.assertTemplateUsed(response, "player/player_details.html")
 
+    #testing player searching page
     def test_search_player(self):
         response = self.client.post(reverse("search_player"))
         self.assertContains(response,"Enter Player ID")

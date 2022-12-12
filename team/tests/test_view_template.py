@@ -13,21 +13,20 @@ class PlayerTests(TestCase):
         t1.save()
         t2 = Team(teamID = 2, teamName = "FC Electronic Eng. ", managerName = "Jeremy Turner", teamSponsor="Nike" )
         t2.save()
-        t3 = Team(teamID = 3, teamName = "Team Mechanical", managerName = "Matt Clark", teamSponsor="Puma" )
-        t3.save()
-        t4 = Team(teamID = 4, teamName = "FC Civil", managerName = "Robin Baker", teamSponsor="Fly Emirates" )
-        t4.save()
-    
+        
+    #testing all teams page
     def test_show_teams(self):
         response = self.client.get(reverse("show_teams"))
         self.assertEqual(response.status_code,200)
         self.assertTemplateUsed(response, "team/show_teams.html")
     
+    #testing individual team's page
     def test_team_details(self):
         response = self.client.post(reverse("team_details",args=[2]))
         self.assertEqual(response.status_code,200)
         self.assertTemplateUsed(response, "team/team_details.html")
 
+    #testing signing player
     def test_signing(self):
         p1 = Player(pID = 1000, fName = "Phil" , lName = "Smith", height = 156, weight = 60.5, num = 10, position = "Forward")
         p1.save()
@@ -40,6 +39,7 @@ class PlayerTests(TestCase):
         self.assertContains(response1, "Phil")
         self.assertContains(response1, "Smith")
 
+    #testing searching team details form and page
     def test_search_team(self): 
         response = self.client.post(reverse("search_team"))
         self.assertTemplateUsed(response, "team/search_team.html")

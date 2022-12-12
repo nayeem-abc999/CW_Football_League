@@ -2,12 +2,14 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from leaguestat.forms import MatchUpdateForm
 from .models import Fixtures, LeagueTable
-# Create your views here.
+
+#defined to generate league table page with current standing information
 def league_table(request):
     context = {}
     context["table"] = LeagueTable.objects.all().order_by('-points')
     return render(request, "leaguestat/league_table.html",context)
 
+#defined to update match result updating form and updating league table's data
 def match_result(request):
     context = {}
     form = MatchUpdateForm(request.POST or None)
@@ -53,6 +55,7 @@ def match_result(request):
     context['form']= form
     return render(request, "leaguestat/match_result.html",context)
 
+#defined to show all played match and scores
 def season_history(request):
     context = {}
     context["season_history"] = Fixtures.objects.all().order_by('-matchID')

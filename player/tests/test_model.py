@@ -18,14 +18,15 @@ class PlayerTests(TestCase):
         p4.save()
         p5 = Player(pID = 1004, fName = "Robert" , lName = "Smith", height = 177, weight = 60.5, num = 8, position = "Defender")
         p5.save()
-    
+    #testing Player object creation
     def test_Player(self):
         db_count = Player.objects.all().count()
         p6 = Player(pID = 1005, fName = "David" , lName = "White", height = 144, weight = 67.5, num = 6, position = "Defender")
         p6.save()
         self.assertEqual(db_count + 1, 6)
 
-    def test_invalid_attributes(self):
+    #testing invalid id using negative id number
+    def test_invalid_negativeID(self):
         db_count = Player.objects.all().count()
         p = Player(pID = -1, fName = "Phil" , lName = "Smith", height = 156, weight = 60.5, num = 10, position = "Forward")
         
@@ -35,7 +36,9 @@ class PlayerTests(TestCase):
         except IntegrityError:
             pass
         self.assertNotEqual(db_count + 1, Player.objects.all().count())
-
+    #testing invalid id using duplicate ID
+    def test_invalid_duplicateID(self):
+        db_count = Player.objects.all().count()
         p = Player(pID = 1001, fName = "James" , lName = "Smith", height = 156, weight = 70, num = 10, position = "Forward")
         try:
             with transaction.atomic():
@@ -44,6 +47,7 @@ class PlayerTests(TestCase):
             pass
         self.assertNotEqual(db_count + 1, Player.objects.all().count())
 
+    #testing adding new player using user's data
     def test_new_player_added(self):
         db_count = Player.objects.all().count()
         data = {"pID": 1006, "fName": "James", "lName": "Anderson", "height": 170, "weight" : 78, "num": 11, "position" :"Goal Keeper"}
