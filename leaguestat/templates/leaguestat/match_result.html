@@ -1,20 +1,23 @@
 
 {% extends "base.html" %}
     
-    {% block title}
+    {% block title %}
         <title>Result Update</title>
-    {% endblock title}
+    {% endblock title %}
    
 {% block content %}
   {% include 'leaguestat/leaguestat_navbar.html' %}
   <h3>Enter the Teams and Goal scored by them</h3>
   <hr>
-  <form method="POST" enctype="multipart/form-data">
+  <p><b>same team on both field will not be added in the season history</b></p>
+  
+<form method="POST" enctype="multipart/form-data">
 <!-- Security token -->
 {% csrf_token %}
 <!-- Using the formset -->
 {{ form.as_p }}
 <input type="submit" value="Submit">
 </form>
+
 {% endblock content %}
 

@@ -4,6 +4,7 @@ from team.forms import SearchTeamForm, TeamMemberForm
 from team.models import Team, TeamPlayers
 from django.shortcuts import render
 from django.shortcuts import redirect
+from django.contrib import messages
 
 # defined to generate all teams data
 def show_teams(request):
@@ -25,10 +26,14 @@ def signing(request):
     context ={}
     form = TeamMemberForm(request.POST or None)
     if form.is_valid():
-        form.save()
-        teamID = form.cleaned_data["teamID"]
-        k = teamID.teamID
-        return redirect(team_details, teamID = k)
+        p = form.cleaned_data["player"]
+        go = TeamPlayers.objects.filter(player__pID = p.pID).count()
+        if go == 0:
+            form.save()
+            teamID = form.cleaned_data["teamID"]
+            k = teamID.teamID
+            return redirect(team_details, teamID = k)
+    messages.add_message(request, messages.ERROR, 'Player already in a team')
     context['form']= form
     return render(request, "team/signing.html",context)
 
